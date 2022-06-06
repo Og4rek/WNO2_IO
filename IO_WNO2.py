@@ -38,6 +38,7 @@ def video_record_dylacja(RATE, CHUNK, RECORD_SECONDS):
             frame = cv2.dilate(frame, kernel)
             result.write(frame)
             cv2.imshow('Dylacja', frame)
+            cv2.waitKey(1)
         else:
             break
     result.release()
@@ -57,6 +58,7 @@ def video_record_erozja(RATE, CHUNK, RECORD_SECONDS):
             frame = cv2.erode(frame, kernel)
             result.write(frame)
             cv2.imshow('Erozja', frame)
+            cv2.waitKey(1)
         else:
             break
     result.release()
@@ -75,6 +77,7 @@ def video_record_sobel(RATE, CHUNK, RECORD_SECONDS):
             sobel = cv2.Sobel(frame, cv2.CV_8U, 1, 1, 5)
             result.write(sobel)
             cv2.imshow('Filtr sobela', sobel)
+            cv2.waitKey(1)
         else:
             break
     result.release()
@@ -92,8 +95,8 @@ def video_record(RATE, CHUNK, RECORD_SECONDS):
 
         if ret:
             result.write(frame)
-            cv2.imshow('video_record', frame)
-
+            cv2.imshow('video', frame)
+            cv2.waitKey(1)
         else:
             break
 
